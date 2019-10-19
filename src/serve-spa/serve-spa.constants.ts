@@ -1,0 +1,1 @@
+export const SERVE_SPA_OPTIONS = 'SERVE_SPA_OPTIONS';
