@@ -1,9 +1,10 @@
-import { Module, DynamicModule } from '@nestjs/common';
+import { Module, DynamicModule, Global } from '@nestjs/common';
 import { JWT, JWT_OPTIONS } from './constants';
 import * as jwt from 'jsonwebtoken';
 import { JwtOptions } from './jwt.interfaces';
 import { JwtService } from './jwt.service';
 
+@Global()
 @Module({
     providers: [
         {

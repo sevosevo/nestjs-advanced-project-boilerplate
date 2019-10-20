@@ -8,9 +8,14 @@ import UserDTO from './user.dto';
 export class UserService {
     constructor(@InjectModel('users') private readonly user: Model<User>) { } 
 
-    createUser(userDTO: UserDTO): Promise<User> {
+    public createUser(userDTO: UserDTO): Promise<User> {
         const u = new this.user(userDTO);
         return u.save();
+    }
+
+    public async findByEmail(email: string): Promise<User | null> {
+        const u = this.user.findOne({ email });
+        return u;
     }
 }
 export default UserService;

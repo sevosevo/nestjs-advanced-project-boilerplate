@@ -4,6 +4,7 @@ import { ServeSpaModule } from './serve-spa/serve-spa.module';
 import { ConfigModule } from './config/config.module';
 import { ConfigService } from './config/config.service';
 import { JwtModule } from './jwt/jwt.module';
+import AuthenticationModule from './authentication/authentication.module';
 
 @Module({
     imports: [
@@ -36,7 +37,8 @@ import { JwtModule } from './jwt/jwt.module';
                 }
             },
             inject: [ConfigService]
-        })
+        }),
+        AuthenticationModule
     ]
 })
 export class AppModule {}
