@@ -14,7 +14,7 @@ export class AuthenticationService {
     ) { }
 
     public async validateUserForRegister(email: string): Promise<AuthenticationValidationResponse> {
-        const user = await this.userService.findByEmail(email);
+        const user = await this.userService.findByEmail(email, ['password']);
         if( user ) return {
             success: false,
             message: 'Email already in use'

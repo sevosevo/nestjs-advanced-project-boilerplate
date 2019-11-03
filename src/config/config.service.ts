@@ -14,7 +14,11 @@ export class ConfigService {
         endpoints: ['app', 'app/*'],
         root_path: path.join(__dirname, '../', '/client', '/public'),
         expires_in: '1h',
-        jwt_secret: 'randomstring'
+        jwt_secret: 'randomstring',
+        client_id: process.env.CLIENT_ID,
+        client_secret: process.env.CLIENT_SECRET,
+        redirect_uri: process.env.REDIRECT_URI,
+        scope: ['email', 'profile']
     }
 
     get(field: string): any {
@@ -25,6 +29,12 @@ export class ConfigService {
     set(field: string, value: any): void {
         const f = field.toLowerCase();
         this.config[f] = value;
+    }
+
+    createOptions() {
+        return { 
+            id: 'myId'
+        }
     }
 
 };

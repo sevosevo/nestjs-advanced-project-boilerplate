@@ -1,5 +1,3 @@
-import { Provider } from "@nestjs/common";
-
 export interface ServeSpaOptions {
     endpoints: string | Array<string>;
     rootPath: string;
