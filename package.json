@@ -18,7 +18,7 @@
     "@nestjs/platform-express": "^6.8.3",
     "array-flat-polyfill": "^1.0.1",
     "class-transformer": "^0.2.3",
-    "class-validator": "^0.10.2",
+    "class-validator": "^0.14.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
